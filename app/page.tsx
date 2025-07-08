@@ -369,14 +369,13 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="relative">
-                <Image
-                  src="/placeholder.svg?height=400&width=500"
-                  alt="Propósito de la sustentabilidad"
-                  width={500}
-                  height={400}
-                  className="rounded-2xl shadow-lg"
-                />
+              <div className="relative item-center">
+                <Card className="border-blue-200 hover:shadow-lg transition-shadow rounded-2xl">
+                  <CardContent className="p-4">
+                    <h2 className="text-2xl font-bold text-blue-800 text-center mb-2 mt-4">Conclusión</h2>
+                    <p className="text-lg text-gray-600">La sustentabilidad representa una orientación sistémica y estratégica con múltiples niveles de impacto, desde la operación interna de las organizaciones hasta el bienestar general de la humanidad y del planeta.</p>
+                  </CardContent>
+                </Card>
                 <div className="absolute -bottom-6 -right-6 bg-blue-500 text-white p-4 rounded-full">
                   <Target className="h-8 w-8" />
                 </div>
@@ -397,15 +396,14 @@ export default function Home() {
               transition={{ duration: 0.6 }}
               className="grid lg:grid-cols-2 gap-12 items-center"
             >
-              <div className="relative order-2 lg:order-1">
-                <Image
-                  src="/placeholder.svg?height=400&width=500"
-                  alt="Actores de la sustentabilidad"
-                  width={500}
-                  height={400}
-                  className="rounded-2xl shadow-lg"
-                />
-                <div className="absolute -bottom-6 -left-6 bg-purple-500 text-white p-4 rounded-full">
+              <div className="relative order-2 lg:order-1 item-center">
+                <Card className="border-purple-200 hover:shadow-lg transition-shadow rounded-2xl">
+                  <CardContent className="p-4">
+                    <h2 className="text-2xl font-bold text-purple-700 text-center mb-2 mt-4">Conclusión</h2>
+                    <p className="text-lg text-gray-600 pl-4">La persona responsable cumple un rol central como agente de cambio dentro del sistema organizacional, ya que su liderazgo estratégico permite articular metas sustentables con la lógica operativa y cultural de la organización.</p>
+                  </CardContent>
+                </Card>
+                <div className="absolute -bottom-6 -left-7 bg-purple-500 text-white p-4 rounded-full">
                   <Users className="h-8 w-8" />
                 </div>
               </div>
@@ -420,8 +418,8 @@ export default function Home() {
 
                 <div className="space-y-6">
                   <p className="text-lg text-gray-600 leading-relaxed">
-                    Todos los actores forman parte de un ecosistema que hace posible la transformación sustentable,
-                    desde líderes hasta beneficiarios.
+                    Se requiere de la participación activa de múltiples actores del sistema,
+                     cada uno con funciones y responsabilidades específicas.
                   </p>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -440,13 +438,13 @@ export default function Home() {
                     <Card className="border-purple-200 hover:shadow-lg transition-shadow">
                       <CardContent className="p-4">
                         <h4 className="font-semibold text-purple-700 mb-2">Afectados</h4>
-                        <p className="text-sm text-gray-600">Beneficiarios de las acciones</p>
+                        <p className="text-sm text-gray-600">Beneficiarios ó victimas de las acciones</p>
                       </CardContent>
                     </Card>
                     <Card className="border-purple-200 hover:shadow-lg transition-shadow">
                       <CardContent className="p-4">
-                        <h4 className="font-semibold text-purple-700 mb-2">Ecosistema</h4>
-                        <p className="text-sm text-gray-600">Articulación de todos los roles</p>
+                        <h4 className="font-semibold text-purple-700 mb-2">Roles</h4>
+                        <p className="text-sm text-gray-600">Requieren coordinación y objetivos alineados</p>
                       </CardContent>
                     </Card>
                   </div>
@@ -513,7 +511,7 @@ export default function Home() {
 
               <div className="relative">
                 <Image
-                  src="/placeholder.svg?height=400&width=500"
+                  src="/mapa-cuando.png?height=400&width=500"
                   alt="Temporalidad de la sustentabilidad"
                   width={500}
                   height={400}
@@ -540,13 +538,13 @@ export default function Home() {
               className="grid lg:grid-cols-2 gap-12 items-center"
             >
               <div className="relative order-2 lg:order-1">
-                <Image
-                  src="/placeholder.svg?height=400&width=500"
-                  alt="Espacios de aplicación"
-                  width={500}
-                  height={400}
-                  className="rounded-2xl shadow-lg"
-                />
+                <Card className="border-teal-200 hover:shadow-lg transition-shadow rounded-2xl mb-6">
+                  <CardContent className="p-4">
+                    <h2 className="text-2xl font-bold text-teal-700 text-center mb-2 mt-4">Conclusión</h2>
+                    <p className="text-lg text-gray-600">Reconocer la espacialidad de la sustentabilidad permite articular respuestas más eficaces,
+                       pertinentes y transformadoras para el sistema.</p>
+                  </CardContent>
+                </Card>
                 <div className="absolute -bottom-6 -left-6 bg-teal-500 text-white p-4 rounded-full">
                   <MapPin className="h-8 w-8" />
                 </div>
@@ -654,13 +652,13 @@ export default function Home() {
               </div>
 
               <div className="relative">
-                <Image
-                  src="/placeholder.svg?height=400&width=500"
-                  alt="Gestión de la sustentabilidad"
-                  width={500}
-                  height={400}
-                  className="rounded-2xl shadow-lg"
-                />
+                <Card className="border-indigo-200 hover:shadow-lg transition-shadow rounded-2xl">
+                  <CardContent className="p-4">
+                    <h2 className="text-2xl font-bold text-indigo-700 text-center mb-2 mt-4">Conclusión</h2>
+                    <p className="text-lg text-gray-600">La gestión debe ser sistémica, adaptable y arraigada en la cultura organizacional,
+                       para asegurar su efectividad y su alineación con los desafíos actuales.</p>
+                  </CardContent>
+                </Card>
                 <div className="absolute -bottom-6 -right-6 bg-indigo-500 text-white p-4 rounded-full">
                   <Cog className="h-8 w-8" />
                 </div>
@@ -682,13 +680,12 @@ export default function Home() {
               className="grid lg:grid-cols-2 gap-12 items-center"
             >
               <div className="relative order-2 lg:order-1">
-                <Image
-                  src="/placeholder.svg?height=400&width=500"
-                  alt="Herramientas de gestión"
-                  width={500}
-                  height={400}
-                  className="rounded-2xl shadow-lg"
-                />
+                <Card className="border-rose-200 hover:shadow-lg transition-shadow rounded-2xl pb-6">
+                  <CardContent className="p-4">
+                    <h2 className="text-2xl font-bold text-rose-700 text-center mb-2 mt-4">Conclusión</h2>
+                    <p className="text-lg text-gray-600">Se requiere una infraestructura múltiple, integrada en un sistema de gestión sustentable, alineada, actualizada y orientada a resultados.</p>
+                  </CardContent>
+                </Card>
                 <div className="absolute -bottom-6 -left-6 bg-rose-500 text-white p-4 rounded-full">
                   <Hammer className="h-8 w-8" />
                 </div>
@@ -796,13 +793,13 @@ export default function Home() {
               </div>
 
               <div className="relative">
-                <Image
-                  src="/placeholder.svg?height=400&width=500"
-                  alt="Costos de implementación"
-                  width={500}
-                  height={400}
-                  className="rounded-2xl shadow-lg"
-                />
+                <Card className="border-emerald-200 hover:shadow-lg transition-shadow rounded-2xl">
+                  <CardContent className="p-4">
+                    <h2 className="text-2xl font-bold text-emerald-700 text-center mb-2 mt-4">Conclusión</h2>
+                    <p className="text-lg text-gray-600 text-center">Comprender los costos desde una mirada sistémica y con información precisa permite tomar decisiones eficientes, 
+                      transparentes y alineadas con los objetivos estratégicos y éticos de la organización.</p>
+                  </CardContent>
+                </Card>
                 <div className="absolute -bottom-6 -right-6 bg-emerald-500 text-white p-4 rounded-full">
                   <DollarSign className="h-8 w-8" />
                 </div>
@@ -870,7 +867,7 @@ export default function Home() {
               <div>
                 <h3 className="font-semibold text-lg mb-4">Navegación</h3>
                 <ul className="space-y-2">
-                  {navigationItems.slice(0, 5).map((item) => (
+                  {navigationItems.slice(0).map((item) => (
                     <li key={item.href}>
                       <a href={item.href} className="text-gray-400 hover:text-green-400 transition-colors">
                         {item.label}
@@ -890,16 +887,6 @@ export default function Home() {
                       className="text-gray-400 hover:text-green-400 transition-colors"
                     >
                       Informe Completo
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="text-gray-400 hover:text-green-400 transition-colors">
-                      Documentación
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="text-gray-400 hover:text-green-400 transition-colors">
-                      Casos de Estudio
                     </a>
                   </li>
                 </ul>

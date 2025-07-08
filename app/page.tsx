@@ -24,7 +24,6 @@ import {
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import Image from "next/image"
 
 const navigationItems = [
@@ -37,13 +36,6 @@ const navigationItems = [
   { href: "#como", label: "¿Cómo?" },
   { href: "#con-que", label: "¿Con qué?" },
   { href: "#cuanto", label: "¿Cuánto?" },
-]
-
-const conceptMap = [
-  { id: "sustentabilidad", label: "Sustentabilidad", x: 50, y: 20, color: "bg-green-500" },
-  { id: "ambiental", label: "Ambiental", x: 20, y: 60, color: "bg-blue-500" },
-  { id: "social", label: "Social", x: 50, y: 80, color: "bg-purple-500" },
-  { id: "economico", label: "Económico", x: 80, y: 60, color: "bg-orange-500" },
 ]
 
 export default function Home() {
@@ -203,45 +195,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Concept Map Section */}
-        {/* <section className="py-24 px-6 bg-gradient-to-r from-green-50 to-emerald-50">
-          <div className="max-w-6xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl font-bold text-green-800 mb-4">Mapa Conceptual</h2>
-              <p className="text-xl text-gray-600">Los pilares fundamentales de la sustentabilidad</p>
-            </motion.div>
-
-            <div className="relative h-96 bg-white rounded-2xl shadow-lg p-8">
-              {conceptMap.map((node, index) => (
-                <motion.div
-                  key={node.id}
-                  initial={{ opacity: 0, scale: 0 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className={`absolute transform -translate-x-1/2 -translate-y-1/2 ${node.color} text-white px-6 py-3 rounded-full font-semibold shadow-lg cursor-pointer hover:scale-110 transition-transform`}
-                  style={{ left: `${node.x}%`, top: `${node.y}%` }}
-                >
-                  {node.label}
-                </motion.div>
-              ))} */}
-
-              {/* Connection lines */}
-              { /*<svg className="absolute inset-0 w-full h-full pointer-events-none">
-                <line x1="50%" y1="20%" x2="20%" y2="60%" stroke="#10b981" strokeWidth="2" strokeDasharray="5,5" />
-                <line x1="50%" y1="20%" x2="50%" y2="80%" stroke="#10b981" strokeWidth="2" strokeDasharray="5,5" />
-                <line x1="50%" y1="20%" x2="80%" y2="60%" stroke="#10b981" strokeWidth="2" strokeDasharray="5,5" />
-              </svg>
-            </div>
-          </div>
-        </section> */}
-
         {/* What is Sustainability */}
-        <section id="que-es" className="py-24 px-6 bg-white scroll-mt-20">
+        <section id="que-es" className="min-h-screen py-24 px-6 bg-white scroll-mt-20">
           <div className="max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -309,7 +264,7 @@ export default function Home() {
         </section>
 
         {/* Why be sustainable */}
-        <section id="por-que" className="py-24 px-6 bg-gray-50 scroll-mt-20">
+        <section id="por-que" className="min-h-screen py-24 px-6 bg-gray-50 scroll-mt-20">
           <div className="max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -359,139 +314,500 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Interactive FAQ Section */}
-        <section className="py-24 px-6 bg-white">
-          <div className="max-w-4xl mx-auto">
+        {/* Para qué Section */}
+        <section
+          id="para-que"
+          className="min-h-screen flex items-center justify-center py-24 px-6 bg-gradient-to-br from-blue-50 to-indigo-50 scroll-mt-20"
+        >
+          <div className="max-w-6xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-center mb-12"
+              className="grid lg:grid-cols-2 gap-12 items-center"
             >
-              <h2 className="text-4xl font-bold text-green-800 mb-4">Preguntas Fundamentales</h2>
-              <p className="text-xl text-gray-600">Explora cada aspecto de la sustentabilidad</p>
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="p-3 bg-blue-100 rounded-full">
+                    <Target className="h-8 w-8 text-blue-600" />
+                  </div>
+                  <h2 className="text-4xl font-bold text-blue-800">¿Para qué ser sustentable?</h2>
+                </div>
+
+                <div className="space-y-6">
+                  <p className="text-lg text-gray-600 leading-relaxed">
+                    Ser sustentable tiene como propósito promover un nuevo modelo de desarrollo equitativo y
+                    regenerativo, garantizando la vida digna y el equilibrio ecosistémico a largo plazo.
+                  </p>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <Card className="border-blue-200 hover:shadow-lg transition-shadow">
+                      <CardContent className="p-4">
+                        <h4 className="font-semibold text-blue-700 mb-2">Propósito</h4>
+                        <p className="text-sm text-gray-600">Desarrollo equitativo y regenerativo</p>
+                      </CardContent>
+                    </Card>
+                    <Card className="border-blue-200 hover:shadow-lg transition-shadow">
+                      <CardContent className="p-4">
+                        <h4 className="font-semibold text-blue-700 mb-2">Objetivo</h4>
+                        <p className="text-sm text-gray-600">Desempeño responsable concreto</p>
+                      </CardContent>
+                    </Card>
+                    <Card className="border-blue-200 hover:shadow-lg transition-shadow">
+                      <CardContent className="p-4">
+                        <h4 className="font-semibold text-blue-700 mb-2">Finalidad</h4>
+                        <p className="text-sm text-gray-600">Vida digna y equilibrio ecosistémico</p>
+                      </CardContent>
+                    </Card>
+                    <Card className="border-blue-200 hover:shadow-lg transition-shadow">
+                      <CardContent className="p-4">
+                        <h4 className="font-semibold text-blue-700 mb-2">Intención</h4>
+                        <p className="text-sm text-gray-600">Transformación organizacional ética</p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative">
+                <Image
+                  src="/placeholder.svg?height=400&width=500"
+                  alt="Propósito de la sustentabilidad"
+                  width={500}
+                  height={400}
+                  className="rounded-2xl shadow-lg"
+                />
+                <div className="absolute -bottom-6 -right-6 bg-blue-500 text-white p-4 rounded-full">
+                  <Target className="h-8 w-8" />
+                </div>
+              </div>
             </motion.div>
+          </div>
+        </section>
 
-            <Accordion type="single" collapsible className="space-y-4">
-              <AccordionItem value="para-que" id="para-que" className="border border-green-200 rounded-lg px-6">
-                <AccordionTrigger className="text-left hover:no-underline">
-                  <div className="flex items-center gap-3">
-                    <Target className="h-6 w-6 text-green-600" />
-                    <span className="text-xl font-semibold text-green-800">¿Para qué ser sustentable?</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="pt-4">
-                  <p className="text-lg text-gray-600 leading-relaxed">
-                    Ser sustentable tiene como <strong>propósito</strong> promover un nuevo modelo de desarrollo equitativo y
-                    regenerativo; como <strong>objetivo</strong>, alcanzar metas concretas de desempeño responsable; como <strong>finalidad</strong>,
-                    garantizar la vida digna y el equilibrio ecosistémico a largo plazo; como <strong>motivo</strong>, responder a nuevas
-                    expectativas sociales, económicas y ambientales; y como <strong>intención</strong>, transformar voluntariamente las
-                    prácticas organizacionales hacia modelos más éticos, eficientes y conscientes.
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
+        {/* Quién Section */}
+        <section
+          id="quien"
+          className="min-h-screen flex items-center justify-center py-24 px-6 bg-gradient-to-br from-purple-50 to-pink-50 scroll-mt-20"
+        >
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="grid lg:grid-cols-2 gap-12 items-center"
+            >
+              <div className="relative order-2 lg:order-1">
+                <Image
+                  src="/placeholder.svg?height=400&width=500"
+                  alt="Actores de la sustentabilidad"
+                  width={500}
+                  height={400}
+                  className="rounded-2xl shadow-lg"
+                />
+                <div className="absolute -bottom-6 -left-6 bg-purple-500 text-white p-4 rounded-full">
+                  <Users className="h-8 w-8" />
+                </div>
+              </div>
 
-              <AccordionItem value="quien" id="quien" className="border border-green-200 rounded-lg px-6">
-                <AccordionTrigger className="text-left hover:no-underline">
-                  <div className="flex items-center gap-3">
-                    <Users className="h-6 w-6 text-green-600" />
-                    <span className="text-xl font-semibold text-green-800">¿Quiénes deben ser sustentables?</span>
+              <div className="order-1 lg:order-2">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="p-3 bg-purple-100 rounded-full">
+                    <Users className="h-8 w-8 text-purple-600" />
                   </div>
-                </AccordionTrigger>
-                <AccordionContent className="pt-4">
-                  <p className="text-lg text-gray-600 leading-relaxed">
-                    En materia de sustentabilidad, la <strong>persona responsable</strong> lidera el proceso con visión estratégica; la
-                    <strong>persona interviniente</strong> colabora desde áreas funcionales clave; la <strong>persona afectada</strong> debe ser
-                    considerada como beneficiaria o víctima de las acciones tomadas; y los diversos <strong>roles</strong> deben
-                    articularse para lograr una implementación eficiente y coherente.
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
+                  <h2 className="text-4xl font-bold text-purple-800">¿Quiénes deben ser sustentables?</h2>
+                </div>
 
-              <AccordionItem value="cuando" id="cuando" className="border border-green-200 rounded-lg px-6">
-                <AccordionTrigger className="text-left hover:no-underline">
-                  <div className="flex items-center gap-3">
-                    <Clock className="h-6 w-6 text-green-600" />
-                    <span className="text-xl font-semibold text-green-800">¿Cuándo debe implementarse?</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="pt-4">
+                <div className="space-y-6">
                   <p className="text-lg text-gray-600 leading-relaxed">
-                    La sustentabilidad debe implementarse en el <strong>momento</strong> actual, sin más demoras; requiere una visión de
-                    <strong>tiempo</strong> prolongado para asegurar impactos duraderos; y puede ser catalizada por <strong>ocasiones</strong>
-                    estratégicas dentro o fuera de la organización. Estas dimensiones temporales definen no solo el
-                    cuándo iniciar, sino también cómo sostener y consolidar su integración efectiva.
+                    Todos los actores forman parte de un ecosistema que hace posible la transformación sustentable,
+                    desde líderes hasta beneficiarios.
                   </p>
-                </AccordionContent>
-              </AccordionItem>
 
-              <AccordionItem value="donde" id="donde" className="border border-green-200 rounded-lg px-6">
-                <AccordionTrigger className="text-left hover:no-underline">
-                  <div className="flex items-center gap-3">
-                    <MapPin className="h-6 w-6 text-green-600" />
-                    <span className="text-xl font-semibold text-green-800">¿Dónde se aplica?</span>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <Card className="border-purple-200 hover:shadow-lg transition-shadow">
+                      <CardContent className="p-4">
+                        <h4 className="font-semibold text-purple-700 mb-2">Responsables</h4>
+                        <p className="text-sm text-gray-600">Lideran con visión estratégica</p>
+                      </CardContent>
+                    </Card>
+                    <Card className="border-purple-200 hover:shadow-lg transition-shadow">
+                      <CardContent className="p-4">
+                        <h4 className="font-semibold text-purple-700 mb-2">Intervinientes</h4>
+                        <p className="text-sm text-gray-600">Colaboran desde áreas clave</p>
+                      </CardContent>
+                    </Card>
+                    <Card className="border-purple-200 hover:shadow-lg transition-shadow">
+                      <CardContent className="p-4">
+                        <h4 className="font-semibold text-purple-700 mb-2">Afectados</h4>
+                        <p className="text-sm text-gray-600">Beneficiarios de las acciones</p>
+                      </CardContent>
+                    </Card>
+                    <Card className="border-purple-200 hover:shadow-lg transition-shadow">
+                      <CardContent className="p-4">
+                        <h4 className="font-semibold text-purple-700 mb-2">Ecosistema</h4>
+                        <p className="text-sm text-gray-600">Articulación de todos los roles</p>
+                      </CardContent>
+                    </Card>
                   </div>
-                </AccordionTrigger>
-                <AccordionContent className="pt-4">
-                  <p className="text-lg text-gray-600 leading-relaxed">
-                    La sustentabilidad debe operar en múltiples niveles espaciales. El <strong>sitio</strong> define los espacios
-                    concretos donde se producen impactos; el <strong>lugar</strong> incorpora su dimensión cultural y simbólica; y la
-                    <strong>ubicación</strong> determina las condiciones materiales, normativas y ecológicas que inciden en el tipo de
-                    sustentabilidad posible o necesaria.
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
 
-              <AccordionItem value="como" id="como" className="border border-green-200 rounded-lg px-6">
-                <AccordionTrigger className="text-left hover:no-underline">
-                  <div className="flex items-center gap-3">
-                    <Cog className="h-6 w-6 text-green-600" />
-                    <span className="text-xl font-semibold text-green-800">¿Cómo se gestiona?</span>
+        {/* Cuándo Section */}
+        <section
+          id="cuando"
+          className="min-h-screen flex items-center justify-center py-24 px-6 bg-gradient-to-br from-orange-50 to-red-50 scroll-mt-20"
+        >
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="grid lg:grid-cols-2 gap-12 items-center"
+            >
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="p-3 bg-orange-100 rounded-full">
+                    <Clock className="h-8 w-8 text-orange-600" />
                   </div>
-                </AccordionTrigger>
-                <AccordionContent className="pt-4">
-                  <p className="text-lg text-gray-600 leading-relaxed">
-                    La sustentabilidad se gestiona mediante una <strong>manera</strong> ética y estratégica; un <strong>método</strong> estructurado; un
-                    <strong>proceso</strong> continuo; una <strong>forma</strong> contextual; un <strong>procedimiento</strong> técnico-administrativo; un <strong>modo</strong> cultural y
-                    de liderazgo; <strong>técnicas</strong> operativas y pedagógicas; e <strong>instrucciones</strong> claras.
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
+                  <h2 className="text-4xl font-bold text-orange-800">¿Cuándo debe implementarse?</h2>
+                </div>
 
-              <AccordionItem value="con-que" id="con-que" className="border border-green-200 rounded-lg px-6">
-                <AccordionTrigger className="text-left hover:no-underline">
-                  <div className="flex items-center gap-3">
-                    <Hammer className="h-6 w-6 text-green-600" />
-                    <span className="text-xl font-semibold text-green-800">¿Con qué se gestiona?</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="pt-4">
+                <div className="space-y-6">
                   <p className="text-lg text-gray-600 leading-relaxed">
-                    La gestión se apoya en <strong>instrumentos</strong> que definen marcos estratégicos; <strong>objetos</strong> que refuerzan prácticas
-                    sostenibles; <strong>recursos</strong> que hacen posible la acción; <strong>elementos</strong> que configuran la estructura del
-                    sistema; <strong>medios</strong> que canalizan las decisiones; <strong>herramientas</strong> que facilitan la operatividad técnica; y
-                    <strong>utensilios</strong> que concretan acciones cotidianas sostenibles.
+                    La sustentabilidad debe implementarse ahora, con visión a largo plazo y aprovechando ocasiones
+                    estratégicas para su consolidación efectiva.
                   </p>
-                </AccordionContent>
-              </AccordionItem>
 
-              <AccordionItem value="cuanto" id="cuanto" className="border border-green-200 rounded-lg px-6">
-                <AccordionTrigger className="text-left hover:no-underline">
-                  <div className="flex items-center gap-3">
-                    <DollarSign className="h-6 w-6 text-green-600" />
-                    <span className="text-xl font-semibold text-green-800">¿Cuánto cuesta implementarla?</span>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <Card className="border-orange-200 hover:shadow-lg transition-shadow">
+                      <CardContent className="p-4">
+                        <h4 className="font-semibold text-orange-700 mb-2">Momento Actual</h4>
+                        <p className="text-sm text-gray-600">Sin más demoras, acción inmediata</p>
+                      </CardContent>
+                    </Card>
+                    <Card className="border-orange-200 hover:shadow-lg transition-shadow">
+                      <CardContent className="p-4">
+                        <h4 className="font-semibold text-orange-700 mb-2">Visión Prolongada</h4>
+                        <p className="text-sm text-gray-600">Impactos duraderos a largo plazo</p>
+                      </CardContent>
+                    </Card>
+                    <Card className="border-orange-200 hover:shadow-lg transition-shadow">
+                      <CardContent className="p-4">
+                        <h4 className="font-semibold text-orange-700 mb-2">Ocasiones Estratégicas</h4>
+                        <p className="text-sm text-gray-600">Catalizadores internos y externos</p>
+                      </CardContent>
+                    </Card>
+                    <Card className="border-orange-200 hover:shadow-lg transition-shadow">
+                      <CardContent className="p-4">
+                        <h4 className="font-semibold text-orange-700 mb-2">Consolidación</h4>
+                        <p className="text-sm text-gray-600">Integración efectiva sostenida</p>
+                      </CardContent>
+                    </Card>
                   </div>
-                </AccordionTrigger>
-                <AccordionContent className="pt-4">
+                </div>
+              </div>
+
+              <div className="relative">
+                <Image
+                  src="/placeholder.svg?height=400&width=500"
+                  alt="Temporalidad de la sustentabilidad"
+                  width={500}
+                  height={400}
+                  className="rounded-2xl shadow-lg"
+                />
+                <div className="absolute -bottom-6 -right-6 bg-orange-500 text-white p-4 rounded-full">
+                  <Clock className="h-8 w-8" />
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Dónde Section */}
+        <section
+          id="donde"
+          className="min-h-screen flex items-center justify-center py-24 px-6 bg-gradient-to-br from-teal-50 to-cyan-50 scroll-mt-20"
+        >
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="grid lg:grid-cols-2 gap-12 items-center"
+            >
+              <div className="relative order-2 lg:order-1">
+                <Image
+                  src="/placeholder.svg?height=400&width=500"
+                  alt="Espacios de aplicación"
+                  width={500}
+                  height={400}
+                  className="rounded-2xl shadow-lg"
+                />
+                <div className="absolute -bottom-6 -left-6 bg-teal-500 text-white p-4 rounded-full">
+                  <MapPin className="h-8 w-8" />
+                </div>
+              </div>
+
+              <div className="order-1 lg:order-2">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="p-3 bg-teal-100 rounded-full">
+                    <MapPin className="h-8 w-8 text-teal-600" />
+                  </div>
+                  <h2 className="text-4xl font-bold text-teal-800">¿Dónde se aplica?</h2>
+                </div>
+
+                <div className="space-y-6">
                   <p className="text-lg text-gray-600 leading-relaxed">
-                    Los costos pueden estimarse en función de la <strong>cantidad</strong> de recursos involucrados, la <strong>magnitud</strong> de los
-                    esfuerzos requeridos, el <strong>número</strong> de acciones implicadas, y los <strong>detalles cuantitativos</strong> asociados a
-                    cada etapa. Esta mirada integral permite construir un presupuesto realista y estratégico, orientado
-                    al logro de beneficios sostenibles a largo plazo.
+                    La sustentabilidad opera en múltiples niveles espaciales, desde sitios concretos hasta ubicaciones
+                    con condiciones específicas.
                   </p>
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <Card className="border-teal-200 hover:shadow-lg transition-shadow">
+                      <CardContent className="p-4">
+                        <h4 className="font-semibold text-teal-700 mb-2">Sitio</h4>
+                        <p className="text-sm text-gray-600">Espacios concretos de impacto</p>
+                      </CardContent>
+                    </Card>
+                    <Card className="border-teal-200 hover:shadow-lg transition-shadow">
+                      <CardContent className="p-4">
+                        <h4 className="font-semibold text-teal-700 mb-2">Lugar</h4>
+                        <p className="text-sm text-gray-600">Dimensión cultural y simbólica</p>
+                      </CardContent>
+                    </Card>
+                    <Card className="border-teal-200 hover:shadow-lg transition-shadow">
+                      <CardContent className="p-4">
+                        <h4 className="font-semibold text-teal-700 mb-2">Ubicación</h4>
+                        <p className="text-sm text-gray-600">Condiciones materiales y normativas</p>
+                      </CardContent>
+                    </Card>
+                    <Card className="border-teal-200 hover:shadow-lg transition-shadow">
+                      <CardContent className="p-4">
+                        <h4 className="font-semibold text-teal-700 mb-2">Estrategias</h4>
+                        <p className="text-sm text-gray-600">Adaptadas al entorno específico</p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Cómo Section */}
+        <section
+          id="como"
+          className="min-h-screen flex items-center justify-center py-24 px-6 bg-gradient-to-br from-indigo-50 to-purple-50 scroll-mt-20"
+        >
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="grid lg:grid-cols-2 gap-12 items-center"
+            >
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="p-3 bg-indigo-100 rounded-full">
+                    <Cog className="h-8 w-8 text-indigo-600" />
+                  </div>
+                  <h2 className="text-4xl font-bold text-indigo-800">¿Cómo se gestiona?</h2>
+                </div>
+
+                <div className="space-y-6">
+                  <p className="text-lg text-gray-600 leading-relaxed">
+                    La gestión sustentable requiere un enfoque integral que combine ética, estrategia, procesos
+                    continuos y liderazgo cultural.
+                  </p>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <Card className="border-indigo-200 hover:shadow-lg transition-shadow">
+                      <CardContent className="p-4">
+                        <h4 className="font-semibold text-indigo-700 mb-2">Manera Ética</h4>
+                        <p className="text-sm text-gray-600">Enfoque estratégico responsable</p>
+                      </CardContent>
+                    </Card>
+                    <Card className="border-indigo-200 hover:shadow-lg transition-shadow">
+                      <CardContent className="p-4">
+                        <h4 className="font-semibold text-indigo-700 mb-2">Método Estructurado</h4>
+                        <p className="text-sm text-gray-600">Procesos organizados y continuos</p>
+                      </CardContent>
+                    </Card>
+                    <Card className="border-indigo-200 hover:shadow-lg transition-shadow">
+                      <CardContent className="p-4">
+                        <h4 className="font-semibold text-indigo-700 mb-2">Forma Contextual</h4>
+                        <p className="text-sm text-gray-600">Adaptada a cada situación</p>
+                      </CardContent>
+                    </Card>
+                    <Card className="border-indigo-200 hover:shadow-lg transition-shadow">
+                      <CardContent className="p-4">
+                        <h4 className="font-semibold text-indigo-700 mb-2">Liderazgo Cultural</h4>
+                        <p className="text-sm text-gray-600">Transformación organizacional</p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative">
+                <Image
+                  src="/placeholder.svg?height=400&width=500"
+                  alt="Gestión de la sustentabilidad"
+                  width={500}
+                  height={400}
+                  className="rounded-2xl shadow-lg"
+                />
+                <div className="absolute -bottom-6 -right-6 bg-indigo-500 text-white p-4 rounded-full">
+                  <Cog className="h-8 w-8" />
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Con qué Section */}
+        <section
+          id="con-que"
+          className="min-h-screen flex items-center justify-center py-24 px-6 bg-gradient-to-br from-rose-50 to-pink-50 scroll-mt-20"
+        >
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="grid lg:grid-cols-2 gap-12 items-center"
+            >
+              <div className="relative order-2 lg:order-1">
+                <Image
+                  src="/placeholder.svg?height=400&width=500"
+                  alt="Herramientas de gestión"
+                  width={500}
+                  height={400}
+                  className="rounded-2xl shadow-lg"
+                />
+                <div className="absolute -bottom-6 -left-6 bg-rose-500 text-white p-4 rounded-full">
+                  <Hammer className="h-8 w-8" />
+                </div>
+              </div>
+
+              <div className="order-1 lg:order-2">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="p-3 bg-rose-100 rounded-full">
+                    <Hammer className="h-8 w-8 text-rose-600" />
+                  </div>
+                  <h2 className="text-4xl font-bold text-rose-800">¿Con qué se gestiona?</h2>
+                </div>
+
+                <div className="space-y-6">
+                  <p className="text-lg text-gray-600 leading-relaxed">
+                    La gestión sustentable se apoya en diversos componentes que van desde marcos estratégicos hasta
+                    herramientas operativas concretas.
+                  </p>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <Card className="border-rose-200 hover:shadow-lg transition-shadow">
+                      <CardContent className="p-4">
+                        <h4 className="font-semibold text-rose-700 mb-2">Instrumentos</h4>
+                        <p className="text-sm text-gray-600">Marcos estratégicos y normativos</p>
+                      </CardContent>
+                    </Card>
+                    <Card className="border-rose-200 hover:shadow-lg transition-shadow">
+                      <CardContent className="p-4">
+                        <h4 className="font-semibold text-rose-700 mb-2">Recursos</h4>
+                        <p className="text-sm text-gray-600">Elementos que hacen posible la acción</p>
+                      </CardContent>
+                    </Card>
+                    <Card className="border-rose-200 hover:shadow-lg transition-shadow">
+                      <CardContent className="p-4">
+                        <h4 className="font-semibold text-rose-700 mb-2">Herramientas</h4>
+                        <p className="text-sm text-gray-600">Facilitan la operatividad técnica</p>
+                      </CardContent>
+                    </Card>
+                    <Card className="border-rose-200 hover:shadow-lg transition-shadow">
+                      <CardContent className="p-4">
+                        <h4 className="font-semibold text-rose-700 mb-2">Medios</h4>
+                        <p className="text-sm text-gray-600">Canalizan las decisiones</p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Cuánto Section */}
+        <section
+          id="cuanto"
+          className="min-h-screen flex items-center justify-center py-24 px-6 bg-gradient-to-br from-emerald-50 to-green-50 scroll-mt-20"
+        >
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="grid lg:grid-cols-2 gap-12 items-center"
+            >
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="p-3 bg-emerald-100 rounded-full">
+                    <DollarSign className="h-8 w-8 text-emerald-600" />
+                  </div>
+                  <h2 className="text-4xl font-bold text-emerald-800">¿Cuánto cuesta implementarla?</h2>
+                </div>
+
+                <div className="space-y-6">
+                  <p className="text-lg text-gray-600 leading-relaxed">
+                    Los costos se estiman considerando recursos, esfuerzos, acciones y beneficios a largo plazo para
+                    construir un presupuesto estratégico y realista.
+                  </p>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <Card className="border-emerald-200 hover:shadow-lg transition-shadow">
+                      <CardContent className="p-4">
+                        <h4 className="font-semibold text-emerald-700 mb-2">Recursos</h4>
+                        <p className="text-sm text-gray-600">Cantidad de recursos involucrados</p>
+                      </CardContent>
+                    </Card>
+                    <Card className="border-emerald-200 hover:shadow-lg transition-shadow">
+                      <CardContent className="p-4">
+                        <h4 className="font-semibold text-emerald-700 mb-2">Magnitud</h4>
+                        <p className="text-sm text-gray-600">Esfuerzos requeridos por etapa</p>
+                      </CardContent>
+                    </Card>
+                    <Card className="border-emerald-200 hover:shadow-lg transition-shadow">
+                      <CardContent className="p-4">
+                        <h4 className="font-semibold text-emerald-700 mb-2">Acciones</h4>
+                        <p className="text-sm text-gray-600">Número de elementos implicados</p>
+                      </CardContent>
+                    </Card>
+                    <Card className="border-emerald-200 hover:shadow-lg transition-shadow">
+                      <CardContent className="p-4">
+                        <h4 className="font-semibold text-emerald-700 mb-2">ROI Sostenible</h4>
+                        <p className="text-sm text-gray-600">Beneficios a largo plazo</p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative">
+                <Image
+                  src="/placeholder.svg?height=400&width=500"
+                  alt="Costos de implementación"
+                  width={500}
+                  height={400}
+                  className="rounded-2xl shadow-lg"
+                />
+                <div className="absolute -bottom-6 -right-6 bg-emerald-500 text-white p-4 rounded-full">
+                  <DollarSign className="h-8 w-8" />
+                </div>
+              </div>
+            </motion.div>
           </div>
         </section>
 
